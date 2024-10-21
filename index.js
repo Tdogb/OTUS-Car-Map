@@ -5,6 +5,7 @@ const net = require('net');
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    title: "OTUS Mission Map",
     width: 1200,
     height: 800,
     webPreferences: {
@@ -12,6 +13,10 @@ const createWindow = () => {
         contextIsolation: false,
     },
   })
+  mainWindow.webContents.on('new-window', function(e, url) {
+    e.preventDefault();
+    require('electron').shell.openExternal(url);
+  });
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')

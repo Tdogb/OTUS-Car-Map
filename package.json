@@ -12,8 +12,10 @@
   "description": "",
   "dependencies": {
     "electron": "^32.1.2",
+    "flatpickr": "^4.6.13",
     "leaflet": "^1.9.4",
     "mapbox": "^1.0.0-beta10",
+    "mongo": "^0.1.0",
     "redis": "^4.7.0"
   },
   "devDependencies": {

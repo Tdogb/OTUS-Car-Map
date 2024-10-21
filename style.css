@@ -8,3 +8,92 @@ body {
     height: 600px;
     width: 100%;
 }
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spacing between label and textbox */
+    margin: 20px; /* Adds some margin around the div */
+  }
+
+  .input-container label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .input-container input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; /* Width of the input box */
+  }
+
+  .input-container input:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  .input-container button {
+      padding: 8px 15px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .input-container button:hover {
+      background-color: #0056b3;
+  }
+
+  .input-container input[type="checkbox"] {
+      margin-left: 10px; /* Space between checkbox and label */
+  }
+
+  .checkbox-container {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+  }
+  .checkbox {
+      display: none; /* Hide the default checkbox */
+  }
+  .custom-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #007BFF;
+      border-radius: 4px;
+      position: relative;
+      margin-right: 10px;
+      transition: background-color 0.3s, border-color 0.3s;
+  }
+  .checkbox:checked + .custom-checkbox {
+      background-color: #007BFF;
+      border-color: #007BFF;
+  }
+  .checkbox:checked + .custom-checkbox::after {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      width: 4px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+  }
+  .label {
+      font-size: 16px;
+      color: #333;
+  }
+  .flatpickr-custom {
+      border: 1px solid #c3c3c3;
+      height: 20px;
+      line-height: 36px;
+      /* width: 200px; */
+      padding: 8px;
+      max-width: 360px;
+      border-radius: 3px;
+      background: #fff;
+  }

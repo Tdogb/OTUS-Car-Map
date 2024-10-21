@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaflet.js Map Example</title>
+    <title>OTUS Mission Tracker</title>
     <link rel="stylesheet" href="style.css">
     <!-- Include Leaflet CSS -->
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="flatpickr.min.css">
 </head>
 <body>
-    <h1>OTUS Tracker</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="padding: 8px; font-style: italic;">OTUS Mission Tracker</h2>
+        <input id="datetime_selector" class="flatpickr flatpickr-input flatpickr-custom" type="text" placeholder="Dates" readonly="readonly">
+        <p>UTC:</p>
+        <input id="starttime" class="flatpickr flatpickr-input flatpickr-custom" type="text" placeholder="Start Time" readonly="readonly">
+        <input id="endtime" class="flatpickr flatpickr-input flatpickr-custom" type="text" placeholder="End Time" readonly="readonly">
+        <button id="db-load-button" style="margin-left: 10px; padding: 10px 20px; font-size: 18px; margin-right: 10px;">Load DB</button>
+        <button id="center-button" style="margin-left: 10px; padding: 10px 20px; font-size: 18px; margin-right: 50px;">Center</button>
+    </div>
     <div id="map"></div>
-    
+    <div class="input-container">
+        <label for="textbox">Tanner Altitude Setpoint: </label>
+        <input type="number" id="textbox" placeholder="Desired Altitude">
+        <button type="button">Send</button>
+        <label for="textbox">Lou Altitude Setpoint: </label>
+        <input type="number" id="textbox" placeholder="Desired Altitude">
+        <button type="button">Send</button>
+        <label class="checkbox-container">
+            <span style="margin-right:10px" class="label">Persist</span>
+            <input type="checkbox" class="checkbox" checked>
+            <span class="custom-checkbox"></span>
+        </label>
+      </div>
     <!-- Include Leaflet JS -->
     <script src="node_modules/leaflet/dist/leaflet.js"></script>
     <!-- Include the custom JavaScript -->
     <script src="renderer.js"></script>
+    <script src="db_grabber.js"></script>
 </body>
 </html>
